@@ -1,3 +1,6 @@
+body {
+    background-image: url(https://img.lovepik.com/photo/40025/3785.jpg_wh860.jpg);
+}
 .div1 {
     text-align:center;
     margin-top: 50px;
@@ -102,4 +105,8 @@ img {
     position: absolute;
     right:0;
     top:40%;
+}
+
+.fp {
+    text-align: center;
 }

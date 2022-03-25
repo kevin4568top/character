@@ -1,0 +1,47 @@
+.div1 {
+    text-align:center;
+    margin-top: 50px;
+}
+
+.table1 {
+    border: 2px solid blue;
+    margin-top: 10%;
+    margin-left: 2.5%;
+
+}
+
+td {
+    height: 170px;
+    width: 100px;
+
+}
+
+.table2 {
+    border-bottom: 3px;
+    border: 2px solid;
+    position: absolute;
+    top:  450px;
+    right:  100px;
+    border: 1px solid black;
+    width:200px;
+    height: 1000px;
+}
+
+
+.table2 td {
+    border: 1px solid black;
+
+}
+
+.td1 {
+    background-color: cornflowerblue;
+    height: 100px;
+}
+
+.td2 {
+    height: 800px;
+}
+
+.td3 {
+    height: 100px;
+}
