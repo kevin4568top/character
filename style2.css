@@ -12,10 +12,14 @@
 }
 
 .table1 {
+    background-color: aqua;
     border: 2px solid blue;
     margin-top: 10%;
     margin-left: 2.5%;
     table-layout:fixed;
+}
+.table1:hover {
+    background-color: darkmagenta;
 }
 
 td {
@@ -37,7 +41,7 @@ td {
 }
 
 
-.table2 td {
+.table2 td {/*右側介紹欄內框線*/
     border: 1px solid black;
 
 }
@@ -74,10 +78,52 @@ img {
 }
 
 #person {
-    position:absolute;
+    position:relative;
     width: 50%;
     height: 50%;
     padding-left: 25%;
     margin-top: 10%;
+}
+
+.per1 {
+    text-align: center;
+}
+
+
+
+
+#gpic {
+    position:relative;
+    width: 50%;
+    height: 50%;
+    padding-left: 25%;
+    margin-top: -90%;
+    padding-top: 100%;
+
+}
+
+.table3 {
+    position:relative;
+    border: 2px solid black;
+    width: 180%;
+    height: 15%;
+}
+
+.table3 td {/*精選插圖內框線*/
+    border: 1px solid black;
+
+}
+
+.table3 img {
+    display: block;
+}
+
+.think {
+    position:absolute;
+    width: 50%;
+    height: 50%;
+    padding-left: 25%;
+    margin-top: -90%;
+    padding-top: 100%;
 
 }
