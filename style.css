@@ -7,21 +7,21 @@ body {
     margin-top: 50px;
 }
 
-.blink {
+.blink {/*閃爍文字*/
     text-align: center;
     font-size: 20px;
     margin-top: 40px;
     color: black;
-    animation-duration: 1.5s;
+    animation-duration: 2.5s;
     animation-name: blink;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     text-shadow:
-    0 0 5px rgba(67,232,216, 1),
-    0 0 10px rgba(67,232,216, 1),
-    0 0 20px rgba(67,232,216, 1),
-    0 0 40px rgba(67,232,216, 1);
+    0 0 5px rgb(137, 184, 211),
+    0 0 10px rgb(137, 184, 211),
+    0 0 20px rgb(137, 184, 211),
+    0 0 40px rgb(137, 184, 211);
 
 }
 @keyframes blink {

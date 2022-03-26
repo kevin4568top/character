@@ -1,4 +1,4 @@
-/*window.onload = function(){
+window.onload = function(){
     setInterval("toggleSound()",100);
 }
 
@@ -9,4 +9,4 @@ function toggleSound() {
            music.paused=false;
            music.play(); //沒有就播放
        }
-}*/
+}
