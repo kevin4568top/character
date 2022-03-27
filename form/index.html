@@ -4,7 +4,16 @@
         <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Bootstrap留言表单样式代码</title>
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"><!--main css--><link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     </head>
+    <style>
+        #img {
+            display: block;
+            margin: auto;
+            width: 600px;
+            height: 400px;
+        }
+    </style>
     <body>
         <section id="contact-area"  >
             <div class="container"><!--end section heading-->
@@ -13,12 +22,16 @@
                 <form id="ajax-contact" action="contact.php" method="post"><div class="form-group row"><div class="col-lg-6"><input type="text" class="form-control" id="name" name="name" placeholder="姓名*" required></div><div class="col-lg-6"><input type="email" class="form-control" id="email" name="email" placeholder="Email*" required></div></div><div class="form-group"><input type="text" class="form-control" id="subject" name="subject" placeholder="請在此欄位輸入星爆氣流斬"></div>
                 <div class="form-group"><textarea class="form-control" id="message" name="message" rows="10" placeholder="對於網頁建議*" required></textarea></div>
                 <button type="button" onclick="check()">提 交</button>
+
                 <div id="form-messages"></div>
                 </form>
                 </div><!--end contact form-->
                 </div>
                 </div>
-                </div>
+            </div>
+            <div>
+                <img src="https://memeprod.sgp1.digitaloceanspaces.com/meme/bf395c955b2b735268f32ea26392a994.png" id="img">
+            </div>
         </section>
 
         <script type="text/javascript">
@@ -27,6 +40,19 @@
                 var pass = document.getElementById("email");
                 alert("回覆成功!謝謝您的回覆，預計於36525個工作天內回覆，請耐心等待");
             }
+
+            let img = document.getElementById("img");
+            img.addEventListener("mouseover",function(){
+                this.src = "https://storage.inewsdb.com/0421a48571ffd0a3a973fa63a7440d8f.jpeg";
+            });
+
+            img.addEventListener("mouseout",function(){
+                this.src = "https://memeprod.sgp1.digitaloceanspaces.com/meme/bf395c955b2b735268f32ea26392a994.png";
+            });
+
+
+
+
         </script>
 
     </body>

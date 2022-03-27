@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>魔王熊的終極測驗</title>
+  <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+  <style>
+    #t1 {
+      text-align: center;
+      font-size: 20px;
+      color:green;
+    }
+    body {/*放射性漸層*/
+      background: repeating-radial-gradient(orange, yellow 20px, orange 40px);
+    }
+  </style>
+  </head>
+<script language="javascript">
+
+  function two_char(n) {
+            return n >= 10 ? n : "0" + n;
+        }
+        function time_fun() {
+            var sec=0;
+            setInterval(function () {
+                sec++;
+                var date = new Date(0, 0)
+                date.setSeconds(sec);
+                var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
+                document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+            }, 1000);
+        }
+
+function main(){
+  var questionArray = new Array("Q1","Q2","Q3","Q4","Q5","Q6","Q7","Q8","Q9","Q10");
+  var resultArray = new Array();
+   var rightArray = new Array();
+
+  //aryAns[]是從後端返回的陣列,當點選交卷的時候,向後端請求正確答案的陣列,賦值給aryAns[]即可;
+  var aryAns = new Array(4,3,4,3,2,2,3,1,4,2);   //建立儲存正確答案的陣列
+  for (var i = 0; i < questionArray.length; i++) {
+    if (Name(questionArray[i])!=10) {
+      resultArray[i] = Name(questionArray[i]);
+    }else{
+      alert("第"+(i+1)+"題,您未作答!!");
+      return false;
+    }
+  }
+  var right_number= 0;//計算答對的題數；
+  for (var i = 0; i < questionArray.length; i++) {
+    if (aryAns[i]==resultArray[i]) {
+          right_number++;
+          rightArray[i] = 1;
+    }else{
+          rightArray[i] = 0;
+    }
+  }
+  var right_question = " ";
+  var error_question = " ";
+  for (var i = 0; i < rightArray.length; i++) {
+      if (rightArray[i] ==1 ) {
+          right_question += i+1+",";
+      }else{
+          error_question += i+1+",";
+      }
+  }
+  var time=document.getElementById("mytime").innerHTML;
+  document.getElementById("right_number").innerText = right_number;
+  document.getElementById("time").innerText = time;
+  if (right_question!=" ") {
+      document.getElementById("right_question").innerText = right_question;
+
+  }
+  if (error_question!=" ") {
+  document.getElementById("error_question").innerText = error_question;
+
+}
+};
+
+function Name(name)
+{
+  var temp = document.getElementsByName(name);
+  var intHot = 9;
+  for(var i=0;i<temp.length;i++)
+  {
+     if(temp[i].checked)
+      intHot = temp[i].value;
+  }
+  if (intHot==9) {
+      return 10;
+  }
+  return intHot;
+};
+
+
+</script>
+  <body onload="time_fun()" style="padding:80px;
+">
+    <div id="t1">
+      <b>線上小測驗</b>
+      <h1>測試已開始 請開始作答  <span id="mytime">00:00:00</span></h1>
+      </div>
+
+    <br>
+  	<hr>
+  	<!--  下面表單將以post的方法，將資料傳遞給Text -->
+  		<!-- 第一道題 -->
+  		<p>1.桐人的本名叫甚麼?</p>
+  		<p>
+  			<input type="radio" name="Q1" value="1">桐谷核果<br>
+  			<input type="radio" name="Q1" value="2">桐谷何人<br>
+  			<input type="radio" name="Q1" value="3">銅谷和人<br>
+  			<input type="radio" name="Q1" value="4">桐谷和人<br>  <!-- D -->
+  		</p>
+  		<p>2.桐人在74層攻略的BOSS叫甚麼?</p>
+  		<p>
+  			<input type="radio" name="Q2" value="1">美杜莎<br>
+  			<input type="radio" name="Q2" value="2">米洛濤諾斯<br>
+  			<input type="radio" name="Q2" value="3">閃耀魔眼<br>   <!-- C -->
+  			<input type="radio" name="Q2" value="4">以上皆非<br>
+  		</p>
+  		<p>3.請問白銀喜歡誰?</p>
+  		<p>
+  			<input type="radio" name="Q3" value="1">藤原千花<br>
+  			<input type="radio" name="Q3" value="2">伊井野御子<br>
+  			<input type="radio" name="Q3" value="3">早坂愛<br>
+  			<input type="radio" name="Q3" value="4">四宮輝夜<br>  <!-- D -->
+  		</p>
+  		<p>4.請判斷大魔王熊熊最喜歡下列何者角色?(hint:馬尾)
+  		<p>
+  			<input type="radio" name="Q4" value="1">藤原千花<br>
+  			<input type="radio" name="Q4" value="2">伊井野御子<br>
+  			<input type="radio" name="Q4" value="3">早坂愛<br>    <!-- C -->
+  			<input type="radio" name="Q4" value="4">四宮輝夜<br>
+  		</p>
+  		<p>5.比企谷加入的社團是?</p>
+  		<p>
+  			<input type="radio" name="Q5" value="1">回家社<br>
+  			<input type="radio" name="Q5" value="2">侍奉社<br>    <!-- B -->
+  			<input type="radio" name="Q5" value="3">茶道社<br>
+  			<input type="radio" name="Q5" value="4">籃球社<br>
+  		</p>
+      <p>6.請問雪之下雪乃喜歡的食物是?</p>
+  		<p>
+  			<input type="radio" name="Q6" value="1">奶茶<br>
+  			<input type="radio" name="Q6" value="2">紅茶<br>    <!-- B -->
+  			<input type="radio" name="Q6" value="3">綠茶<br>
+  			<input type="radio" name="Q6" value="4">咖啡<br>
+  		</p>
+      <p>7.請問菜月昴是在死了第幾次後發現擁有死亡回歸能力?</p>
+  		<p>
+  			<input type="radio" name="Q7" value="1">1<br>
+  			<input type="radio" name="Q7" value="2">2<br>
+  			<input type="radio" name="Q7" value="3">3<br>        <!-- C -->
+  			<input type="radio" name="Q7" value="4">4<br>
+  		</p>
+      <p>8.下列哪個角色與艾蜜莉亞擁有契約?</p>
+  		<p>
+  			<input type="radio" name="Q8" value="1">帕克<br>        <!-- A -->
+  			<input type="radio" name="Q8" value="2">阿吉<br>
+  			<input type="radio" name="Q8" value="3">小白<br>
+  			<input type="radio" name="Q8" value="4">加菲爾<br>
+  		</p>
+      <p>9.請問誰的胸部是墊出來的?</p>
+  		<p>
+  			<input type="radio" name="Q9" value="1">惠惠<br>
+  			<input type="radio" name="Q9" value="2">阿克婭<br>
+  			<input type="radio" name="Q9" value="3">芸芸<br>
+  			<input type="radio" name="Q9" value="4">艾莉絲<br>      <!-- D -->
+  		</p>
+      <p>10.請問和真第一次使用STEAL偷走了誰的內褲?</p>
+  		<p>
+  			<input type="radio" name="Q10" value="1">惠惠<br>
+  			<input type="radio" name="Q10" value="2">克莉絲<br>    <!-- B -->
+  			<input type="radio" name="Q10" value="3">達克尼絲<br>
+  			<input type="radio" name="Q10" value="4">阿克婭<br>
+  		</p>
+      <button onclick="javascript:main();">交卷</button>
+  		<h3>
+        十道題中您一共答對了<span id="right_number" style="color:red"></span>題，
+          花了<span id="time" style="color:red"></span>秒
+      <br>
+      正確的題目有:<span id="right_question" style="color:red"></span>
+       <br>
+      錯誤的題目有:<span id="error_question" style="color:red"></span>
+  		</h3>
+  </body>
+</html>
